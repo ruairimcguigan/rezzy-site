@@ -4,93 +4,130 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rezzy — Support</title>
+<link rel="icon" href="assets/icon.png">
 <style>
-  :root { color-scheme: light dark; }
-  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-         max-width: 680px; margin: 0 auto; padding: 48px 24px; color: #1a1a1a; }
-  @media (prefers-color-scheme: dark) { body { background:#111; color:#eee; } a { color:#7aa0ff; } }
-  header { display:flex; align-items:center; gap:16px; margin-bottom:8px; }
-  .logo { width:64px; height:64px; border-radius:14px; }
-  h1 { margin:0; font-size:30px; }
-  h2 { margin-top:36px; font-size:20px; }
-  .sub { color:#777; margin-top:4px; }
-  dt { font-weight:600; margin-top:16px; }
-  nav { margin-bottom:24px; font-size:14px; }
-  footer { margin-top:48px; color:#888; font-size:14px; }
+  :root{ --blue:#5B8DEF; --purple:#7A5CF0; --accent:#3A5BD0;
+         --ink:#0f172a; --muted:#5b6472; --line:#e7e9f0; --soft:#f6f7fb; --maxw:760px; }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+       color:var(--ink);-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;}
+  h1,h2{letter-spacing:-.02em;line-height:1.15;margin:0;}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
 
-  .callout { margin:28px 0 8px; padding:22px 24px; border:1px solid #d9e1ff;
-             background:linear-gradient(160deg,#f1f5ff,#f6f1ff); border-radius:16px; }
-  @media (prefers-color-scheme: dark){ .callout{ background:#15171e; border-color:#2a2f45; } }
-  .callout .ct { font-size:18px; font-weight:700; margin:0 0 6px; }
-  .callout p { margin:6px 0; }
-  .keys { display:flex; gap:8px; align-items:center; margin:16px 0 12px; flex-wrap:wrap; }
-  kbd { display:inline-flex; align-items:center; justify-content:center; min-width:44px;
-        height:48px; padding:0 12px; font-size:22px; font-weight:600;
-        font-family:-apple-system,BlinkMacSystemFont,sans-serif; color:#15181f;
-        background:#fff; border:1px solid #c4cad8; border-bottom-width:3px;
-        border-radius:11px; box-shadow:0 1px 0 rgba(0,0,0,.05); }
-  @media (prefers-color-scheme: dark){ kbd{ color:#f0f0f0; background:#23262f; border-color:#3a3f4f; } }
-  .keys .plus { color:#9aa1b2; font-size:18px; font-weight:600; }
-  .small { font-size:14px; color:#777; }
+  .appstore{display:inline-flex;align-items:center;gap:11px;background:#000;color:#fff;
+            padding:8px 14px;border-radius:11px;transition:transform .15s ease,opacity .15s ease;}
+  .appstore:hover{transform:translateY(-1px);opacity:.92;}
+  .appstore svg{width:20px;height:20px;}
+  .appstore small{display:block;font-size:9px;opacity:.85;line-height:1.1;}
+  .appstore b{font-size:14px;line-height:1.15;font-weight:600;}
+
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);
+       backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px;}
+  .brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:700;font-size:19px;}
+  .brand img{width:30px;height:30px;border-radius:8px;}
+
+  .pagehead{background:linear-gradient(165deg,var(--blue),var(--purple));color:#fff;
+            text-align:center;padding:54px 24px 60px;}
+  .pagehead img{width:72px;height:72px;border-radius:17px;box-shadow:0 12px 36px rgba(0,0,0,.25);}
+  .pagehead h1{font-size:clamp(28px,4vw,40px);margin:18px 0 6px;}
+  .pagehead p{margin:0;opacity:.92;font-size:18px;}
+
+  main{padding:48px 0 16px;}
+  h2{font-size:24px;margin:44px 0 14px;}
+  p{margin:12px 0;}
+
+  .callout{margin:0 0 8px;padding:24px;border:1px solid #d9e1ff;
+           background:linear-gradient(160deg,#f1f5ff,#f6f1ff);border-radius:18px;}
+  .callout .ct{font-size:19px;font-weight:700;margin:0 0 4px;}
+  .keys{display:flex;gap:8px;align-items:center;margin:16px 0 12px;flex-wrap:wrap;}
+  kbd{display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:50px;
+      padding:0 13px;font-size:23px;font-weight:600;font-family:-apple-system,sans-serif;
+      color:#15181f;background:#fff;border:1px solid #c4cad8;border-bottom-width:3px;
+      border-radius:11px;box-shadow:0 1px 0 rgba(0,0,0,.05);}
+  .keys .plus{color:#9aa1b2;font-size:18px;font-weight:600;}
+  .small{font-size:14px;color:var(--muted);}
+
+  .faq{margin-top:8px;}
+  .faq .q{font-weight:600;font-size:18px;margin:26px 0 6px;}
+  .faq .a{color:var(--muted);margin:0;}
+
+  footer{margin-top:48px;padding:36px 24px;text-align:center;color:var(--muted);
+         font-size:14px;border-top:1px solid var(--line);}
+  footer a{color:var(--muted);margin:0 9px;}
 </style>
 </head>
 <body>
-  <nav><a href="index.html">← Rezzy</a></nav>
-  <header>
-    <img class="logo" src="assets/icon.png" alt="Rezzy icon">
-    <div>
-      <h1>Rezzy Support</h1>
-      <div class="sub">Switch your Mac's display resolution from the menu bar.</div>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><img src="assets/icon.png" alt="">Rezzy</a>
+      <a class="appstore" href="https://apps.apple.com/app/id6775189677">
+        <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span><small>Download on the</small><b>Mac App Store</b></span>
+      </a>
     </div>
+  </nav>
+
+  <header class="pagehead">
+    <img src="assets/icon.png" alt="Rezzy icon">
+    <h1>Rezzy Support</h1>
+    <p>Switch your Mac's display resolution from the menu bar.</p>
   </header>
 
-  <div class="callout">
-    <p class="ct">Can't see the Rezzy icon? Open the menu anywhere:</p>
-    <div class="keys">
-      <kbd>⌃</kbd><span class="plus">+</span><kbd>⌥</kbd><span class="plus">+</span><kbd>⌘</kbd><span class="plus">+</span><kbd>D</kbd>
+  <main class="container">
+    <div class="callout">
+      <p class="ct">Can't see the Rezzy icon? Open the menu anywhere:</p>
+      <div class="keys">
+        <kbd>⌃</kbd><span class="plus">+</span><kbd>⌥</kbd><span class="plus">+</span><kbd>⌘</kbd><span class="plus">+</span><kbd>D</kbd>
+      </div>
+      <p>That's <strong>Control&nbsp;+&nbsp;Option&nbsp;+&nbsp;Command&nbsp;+&nbsp;D</strong>. macOS sometimes hides
+         menu-bar icons when the bar is full (common on notched Macs) — this shortcut opens Rezzy's
+         menu no matter what, so you can always switch back.</p>
+      <p class="small">You can also re-open Rezzy from Spotlight or Launchpad. And after any change, Rezzy
+         reverts automatically if you don't confirm — so you can't get stuck on a bad resolution.</p>
     </div>
-    <p>That's <strong>Control&nbsp;+&nbsp;Option&nbsp;+&nbsp;Command&nbsp;+&nbsp;D</strong>. macOS sometimes hides
-       menu-bar icons when the bar is full (common on notched Macs) — this shortcut opens Rezzy's
-       menu no matter what, so you can always switch back.</p>
-    <p class="small">You can also re-open Rezzy from Spotlight or Launchpad. And after any change, Rezzy
-       reverts automatically if you don't confirm — so you can't get stuck on a bad resolution.</p>
-  </div>
 
-  <h2>Getting started</h2>
-  <p>Rezzy lives in your <strong>menu bar</strong> — it has no Dock icon and no window.
-     Click the monitor icon at the top-right of your screen to open the menu, then pick a
-     resolution for any connected display. Hover a resolution to preview it; click to apply.</p>
+    <h2>Getting started</h2>
+    <p>Rezzy lives in your <strong>menu bar</strong> — it has no Dock icon and no window. Click the
+       monitor icon at the top-right of your screen to open the menu, then pick a resolution for any
+       connected display. Hover a resolution to preview it; click to apply.</p>
 
-  <h2>Frequently asked</h2>
-  <dl>
-    <dt>I launched Rezzy but nothing happened.</dt>
-    <dd>Rezzy is a menu-bar app — look for the monitor icon at the top-right of your screen.
-        There is no window or Dock icon. Re-launching it opens the menu.</dd>
+    <h2>Frequently asked</h2>
+    <div class="faq">
+      <p class="q">I launched Rezzy but nothing happened.</p>
+      <p class="a">Rezzy is a menu-bar app — look for the monitor icon at the top-right of your screen.
+         There is no window or Dock icon. Re-launching it opens the menu.</p>
 
-    <dt>The Rezzy icon disappeared from my menu bar.</dt>
-    <dd>macOS hides menu-bar icons when the bar runs out of room (common on notched Macs, or
-        at some resolutions). Rezzy is still running — press <strong>⌃⌥⌘D</strong> to open its
-        menu anywhere, or re-open Rezzy from Spotlight or Launchpad, then pick a resolution
-        that fits. After any change, Rezzy's Keep/Revert prompt also reverts automatically if
-        you don't confirm, so you can't get stuck.</dd>
+      <p class="q">The Rezzy icon disappeared from my menu bar.</p>
+      <p class="a">macOS hides menu-bar icons when the bar runs out of room. Press <strong>⌃⌥⌘D</strong>
+         to open the menu anywhere, or re-open Rezzy from Spotlight or Launchpad. After any change,
+         the Keep/Revert prompt reverts automatically if you don't confirm, so you can't get stuck.</p>
 
-    <dt>How does the free trial work?</dt>
-    <dd>Rezzy is free to use for 7 days. After that, a one-time in-app purchase ("Rezzy
-        Unlock") keeps resolution switching enabled. Your favourites and settings stay.</dd>
+      <p class="q">How does the free trial work?</p>
+      <p class="a">Rezzy is free to use for 7 days. After that, a one-time in-app purchase ("Rezzy
+         Unlock") keeps resolution switching enabled. Your favourites and settings stay.</p>
 
-    <dt>I bought the unlock on another Mac.</dt>
-    <dd>Open the menu and choose <em>Restore Purchase</em> while signed in with the same
-        Apple ID.</dd>
+      <p class="q">I bought the unlock on another Mac.</p>
+      <p class="a">Open the menu and choose <em>Restore Purchase</em> while signed in with the same
+         Apple ID.</p>
 
-    <dt>A resolution looked wrong — how do I get back?</dt>
-    <dd>Rezzy shows a "Keep / Revert" countdown after each change and reverts automatically
-        if you don't confirm. You can also choose <em>Reset to Default</em> for any display.</dd>
-  </dl>
+      <p class="q">A resolution looked wrong — how do I get back?</p>
+      <p class="a">Rezzy shows a "Keep / Revert" countdown after each change and reverts automatically
+         if you don't confirm. You can also choose <em>Reset to Default</em> for any display.</p>
+    </div>
 
-  <h2>Contact</h2>
-  <p>Email <a href="mailto:rmcguigan@aquidigital.co.uk">rmcguigan@aquidigital.co.uk</a>
-     and we'll help. <a href="privacy.html">Privacy Policy</a>.</p>
+    <h2>Contact</h2>
+    <p>Email <a href="mailto:rmcguigan@aquidigital.co.uk">rmcguigan@aquidigital.co.uk</a> and we'll help.</p>
+  </main>
 
-  <footer>© 2026 Aquidigital Ltd. Rezzy is a product of Aquidigital Ltd.</footer>
+  <footer>
+    © 2026 Aquidigital Ltd ·
+    <a href="index.html">Home</a> ·
+    <a href="privacy.html">Privacy</a>
+  </footer>
+
 </body>
 </html>

@@ -4,40 +4,88 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rezzy — Privacy Policy</title>
+<link rel="icon" href="assets/icon.png">
 <style>
-  :root { color-scheme: light dark; }
-  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-         max-width: 680px; margin: 0 auto; padding: 48px 24px; color: #1a1a1a; }
-  @media (prefers-color-scheme: dark) { body { background:#111; color:#eee; } a { color:#7aa0ff; } }
-  h1 { font-size:28px; } h2 { margin-top:32px; font-size:19px; }
-  .sub { color:#777; } nav { margin-bottom:24px; font-size:14px; } footer { margin-top:48px; color:#888; font-size:14px; }
+  :root{ --blue:#5B8DEF; --purple:#7A5CF0; --accent:#3A5BD0;
+         --ink:#0f172a; --muted:#5b6472; --line:#e7e9f0; --maxw:760px; }
+  *{box-sizing:border-box;}
+  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+       color:var(--ink);-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;}
+  h1,h2{letter-spacing:-.02em;line-height:1.15;margin:0;}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+  .appstore{display:inline-flex;align-items:center;gap:11px;background:#000;color:#fff;
+            padding:8px 14px;border-radius:11px;transition:transform .15s ease,opacity .15s ease;}
+  .appstore:hover{transform:translateY(-1px);opacity:.92;}
+  .appstore svg{width:20px;height:20px;}
+  .appstore small{display:block;font-size:9px;opacity:.85;line-height:1.1;}
+  .appstore b{font-size:14px;line-height:1.15;font-weight:600;}
+
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);
+       backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px;}
+  .brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:700;font-size:19px;}
+  .brand img{width:30px;height:30px;border-radius:8px;}
+
+  .pagehead{background:linear-gradient(165deg,var(--blue),var(--purple));color:#fff;
+            text-align:center;padding:54px 24px 60px;}
+  .pagehead h1{font-size:clamp(28px,4vw,40px);margin:0 0 6px;}
+  .pagehead p{margin:0;opacity:.9;font-size:16px;}
+
+  main{padding:48px 0 16px;}
+  h2{font-size:22px;margin:38px 0 12px;}
+  p{margin:12px 0;}
+  .lead{font-size:19px;}
+
+  footer{margin-top:48px;padding:36px 24px;text-align:center;color:var(--muted);
+         font-size:14px;border-top:1px solid var(--line);}
+  footer a{color:var(--muted);margin:0 9px;}
 </style>
 </head>
 <body>
-  <nav><a href="index.html">← Rezzy</a></nav>
-  <h1>Rezzy Privacy Policy</h1>
-  <p class="sub">Last updated: 1 June 2026</p>
 
-  <p><strong>Rezzy does not collect any data.</strong> It contains no analytics, no
-     advertising, and no third-party trackers, and it does not transmit any personal
-     information.</p>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><img src="assets/icon.png" alt="">Rezzy</a>
+      <a class="appstore" href="https://apps.apple.com/app/id6775189677">
+        <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span><small>Download on the</small><b>Mac App Store</b></span>
+      </a>
+    </div>
+  </nav>
 
-  <h2>What stays on your Mac</h2>
-  <p>Your preferences — favourite resolutions, custom labels, per-display defaults, and the
-     trial date — are stored locally on your Mac and never leave your device.</p>
+  <header class="pagehead">
+    <h1>Privacy Policy</h1>
+    <p>Last updated: 1 June 2026</p>
+  </header>
 
-  <h2>Purchases</h2>
-  <p>The optional one-time unlock is handled entirely by Apple's App Store and StoreKit.
-     Rezzy never sees your payment details. Any data involved in a purchase is processed by
-     Apple under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
+  <main class="container">
+    <p class="lead"><strong>Rezzy does not collect any data.</strong> It contains no analytics, no
+       advertising, and no third-party trackers, and it does not transmit any personal information.</p>
 
-  <h2>Network use</h2>
-  <p>Rezzy makes no network connections of its own. The only network activity is Apple's
-     StoreKit verifying the unlock purchase.</p>
+    <h2>What stays on your Mac</h2>
+    <p>Your preferences — favourite resolutions, custom labels, per-display defaults, and the trial
+       date — are stored locally on your Mac and never leave your device.</p>
 
-  <h2>Contact</h2>
-  <p>Questions? Email <a href="mailto:rmcguigan@aquidigital.co.uk">rmcguigan@aquidigital.co.uk</a>.</p>
+    <h2>Purchases</h2>
+    <p>The optional one-time unlock is handled entirely by Apple's App Store and StoreKit. Rezzy
+       never sees your payment details. Any data involved in a purchase is processed by Apple under
+       <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
 
-  <footer>© 2026 Aquidigital Ltd.</footer>
+    <h2>Network use</h2>
+    <p>Rezzy makes no network connections of its own. The only network activity is Apple's StoreKit
+       verifying the unlock purchase.</p>
+
+    <h2>Contact</h2>
+    <p>Questions? Email <a href="mailto:rmcguigan@aquidigital.co.uk">rmcguigan@aquidigital.co.uk</a>.</p>
+  </main>
+
+  <footer>
+    © 2026 Aquidigital Ltd ·
+    <a href="index.html">Home</a> ·
+    <a href="support.html">Support</a>
+  </footer>
+
 </body>
 </html>
