@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rezzy — Switch your Mac's resolution in a click</title>
+<meta name="description" content="Rezzy is a macOS menu-bar app that switches your display resolution in a click — including the sharp HiDPI/Retina modes macOS hides. Live previews, smart picks, and a safety net.">
+<meta property="og:title" content="Rezzy — Switch your Mac's resolution in a click">
+<meta property="og:description" content="A menu-bar app that switches display resolution in a click — including the Retina modes macOS hides.">
+<meta property="og:image" content="assets/03.png">
+<meta property="og:type" content="website">
+<style>
+  :root { --blue:#5B8DEF; --purple:#7A5CF0; --ink:#1a1a1a; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); }
+  a { color:#3A5BD0; }
+  .wrap { max-width:1000px; margin:0 auto; padding:0 24px; }
+
+  /* Hero */
+  .hero { background:linear-gradient(160deg,var(--blue),var(--purple)); color:#fff; text-align:center;
+          padding:80px 24px 96px; }
+  .hero img.logo { width:128px; height:128px; border-radius:28px; box-shadow:0 12px 40px rgba(0,0,0,.25); }
+  .hero h1 { font-size:52px; margin:24px 0 8px; letter-spacing:-.5px; }
+  .hero p.tag { font-size:24px; opacity:.95; margin:0 0 8px; }
+  .hero p.sub { font-size:18px; opacity:.85; max-width:620px; margin:8px auto 32px; }
+  .badge { display:inline-flex; align-items:center; gap:10px; background:#000; color:#fff;
+           text-decoration:none; padding:14px 22px; border-radius:14px; font-weight:600; font-size:17px; }
+  .badge small { display:block; font-size:11px; font-weight:400; opacity:.8; line-height:1; }
+  .badge b { font-size:18px; line-height:1.1; }
+  .note { font-size:13px; opacity:.8; margin-top:14px; }
+
+  /* Features */
+  section { padding:64px 0; }
+  h2 { font-size:30px; text-align:center; margin:0 0 40px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:28px; }
+  .feat h3 { font-size:18px; margin:0 0 6px; }
+  .feat p { margin:0; color:#555; font-size:15px; }
+
+  /* Shots */
+  .shots { background:#f6f7fb; }
+  .shots .row { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .shots img { width:100%; border-radius:14px; box-shadow:0 6px 24px rgba(0,0,0,.10); display:block; }
+
+  footer { padding:40px 24px; text-align:center; color:#888; font-size:14px; }
+  footer a { color:#888; margin:0 10px; }
+  @media (max-width:680px){ .hero h1{font-size:40px} .shots .row{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <img class="logo" src="assets/icon.png" alt="Rezzy app icon">
+    <h1>Rezzy</h1>
+    <p class="tag">Switch your Mac's resolution in a click.</p>
+    <p class="sub">A menu-bar app that changes display resolution instantly — and reveals the
+       sharp HiDPI&nbsp;("Retina") modes macOS hides by default.</p>
+    <a class="badge" href="https://apps.apple.com/app/id6775189677">
+      <span>&#63743;</span><span><small>Download on the</small><b>Mac App Store</b></span>
+    </a>
+    <p class="note">Free with a 7-day trial. macOS 13 or later.</p>
+  </header>
+
+  <section class="wrap">
+    <h2>Everything your displays can do</h2>
+    <div class="grid">
+      <div class="feat"><h3>Hidden Retina modes</h3><p>See and pick the HiDPI resolutions System Settings won't show you — sharper text or more space.</p></div>
+      <div class="feat"><h3>Live preview</h3><p>Hover a resolution to preview how your windows will fit before you switch.</p></div>
+      <div class="feat"><h3>Recommended picks</h3><p>Sharpest, Most Space, and Smoothest (highest refresh) — the trade-off, made clear, per display.</p></div>
+      <div class="feat"><h3>Never get stuck</h3><p>A Keep/Revert countdown puts things back automatically if a resolution doesn't work.</p></div>
+      <div class="feat"><h3>Favourites &amp; defaults</h3><p>Pin the resolutions you use, label them, and auto-apply one when a monitor connects.</p></div>
+      <div class="feat"><h3>Multi-display &amp; private</h3><p>Every connected display in one menu. No data collected, no trackers, no network calls.</p></div>
+    </div>
+  </section>
+
+  <section class="shots">
+    <div class="wrap">
+      <h2>A closer look</h2>
+      <div class="row">
+        <img src="assets/01.png" alt="Switch resolution from the menu bar">
+        <img src="assets/02.png" alt="Hidden HiDPI Retina modes">
+        <img src="assets/03.png" alt="Live resolution preview">
+        <img src="assets/04.png" alt="Recommended picks and safety net">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Aquidigital Ltd ·
+    <a href="support.html">Support</a> ·
+    <a href="privacy.html">Privacy</a>
+  </footer>
+
+</body>
+</html>
